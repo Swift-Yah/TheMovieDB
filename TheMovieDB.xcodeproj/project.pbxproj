@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04BF57361FA76A92000B1914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF57351FA76A92000B1914 /* AppDelegate.swift */; };
-		04BF57381FA76A92000B1914 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF57371FA76A92000B1914 /* ViewController.swift */; };
+		04BF57381FA76A92000B1914 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF57371FA76A92000B1914 /* HomeViewController.swift */; };
 		04BF573B1FA76A92000B1914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BF57391FA76A92000B1914 /* Main.storyboard */; };
 		04BF573D1FA76A92000B1914 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04BF573C1FA76A92000B1914 /* Assets.xcassets */; };
 		04BF57401FA76A92000B1914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BF573E1FA76A92000B1914 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		04BF57321FA76A92000B1914 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BF57351FA76A92000B1914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04BF57371FA76A92000B1914 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04BF57371FA76A92000B1914 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		04BF573A1FA76A92000B1914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04BF573C1FA76A92000B1914 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04BF573F1FA76A92000B1914 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,12 +97,10 @@
 		04BF57341FA76A92000B1914 /* TheMovieDB */ = {
 			isa = PBXGroup;
 			children = (
-				04BF57351FA76A92000B1914 /* AppDelegate.swift */,
-				04BF57371FA76A92000B1914 /* ViewController.swift */,
-				04BF57391FA76A92000B1914 /* Main.storyboard */,
-				04BF573C1FA76A92000B1914 /* Assets.xcassets */,
-				04BF573E1FA76A92000B1914 /* LaunchScreen.storyboard */,
-				04BF57411FA76A92000B1914 /* Info.plist */,
+				04BF57631FA76DE3000B1914 /* Commons */,
+				04BF57641FA76DE9000B1914 /* Controllers */,
+				04BF57651FA76E09000B1914 /* Resources */,
+				04BF57661FA76E48000B1914 /* Storyboards */,
 			);
 			path = TheMovieDB;
 			sourceTree = "<group>";
@@ -123,6 +121,40 @@
 				04BF57571FA76A92000B1914 /* Info.plist */,
 			);
 			path = TheMovieDBUITests;
+			sourceTree = "<group>";
+		};
+		04BF57631FA76DE3000B1914 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				04BF57351FA76A92000B1914 /* AppDelegate.swift */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		04BF57641FA76DE9000B1914 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04BF57371FA76A92000B1914 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04BF57651FA76E09000B1914 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04BF573C1FA76A92000B1914 /* Assets.xcassets */,
+				04BF57411FA76A92000B1914 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		04BF57661FA76E48000B1914 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				04BF573E1FA76A92000B1914 /* LaunchScreen.storyboard */,
+				04BF57391FA76A92000B1914 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04BF57381FA76A92000B1914 /* ViewController.swift in Sources */,
+				04BF57381FA76A92000B1914 /* HomeViewController.swift in Sources */,
 				04BF57361FA76A92000B1914 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -414,7 +446,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -428,7 +460,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LQ5WW9469F;
-				INFOPLIST_FILE = TheMovieDB/Info.plist;
+				INFOPLIST_FILE = TheMovieDB/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.TheMovieDB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -443,7 +476,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LQ5WW9469F;
-				INFOPLIST_FILE = TheMovieDB/Info.plist;
+				INFOPLIST_FILE = TheMovieDB/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.TheMovieDB";
 				PRODUCT_NAME = "$(TARGET_NAME)";
