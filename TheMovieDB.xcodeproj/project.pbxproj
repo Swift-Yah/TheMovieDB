@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0475506D1FA782C700FAE551 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550671FA782C700FAE551 /* RxSwift.framework */; };
+		0475506E1FA782C700FAE551 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550681FA782C700FAE551 /* Alamofire.framework */; };
+		0475506F1FA782C700FAE551 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550691FA782C700FAE551 /* RxCocoa.framework */; };
+		047550701FA782C700FAE551 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0475506A1FA782C700FAE551 /* Result.framework */; };
+		047550711FA782C700FAE551 /* Moya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0475506B1FA782C700FAE551 /* Moya.framework */; };
+		047550721FA782C700FAE551 /* RxMoya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0475506C1FA782C700FAE551 /* RxMoya.framework */; };
+		047550771FA78AAB00FAE551 /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550761FA78AAB00FAE551 /* NSObject_Rx.framework */; };
+		049F16DE1FA7901C00A5D280 /* RxCache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049F16DD1FA7901B00A5D280 /* RxCache.framework */; };
 		04BF57361FA76A92000B1914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF57351FA76A92000B1914 /* AppDelegate.swift */; };
 		04BF57381FA76A92000B1914 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF57371FA76A92000B1914 /* HomeViewController.swift */; };
 		04BF573B1FA76A92000B1914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BF57391FA76A92000B1914 /* Main.storyboard */; };
@@ -34,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		047550671FA782C700FAE551 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		047550681FA782C700FAE551 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		047550691FA782C700FAE551 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		0475506A1FA782C700FAE551 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		0475506B1FA782C700FAE551 /* Moya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Moya.framework; path = Carthage/Build/iOS/Moya.framework; sourceTree = "<group>"; };
+		0475506C1FA782C700FAE551 /* RxMoya.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxMoya.framework; path = Carthage/Build/iOS/RxMoya.framework; sourceTree = "<group>"; };
+		047550761FA78AAB00FAE551 /* NSObject_Rx.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NSObject_Rx.framework; path = Carthage/Build/iOS/NSObject_Rx.framework; sourceTree = "<group>"; };
+		049F16DD1FA7901B00A5D280 /* RxCache.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCache.framework; path = Carthage/Build/iOS/RxCache.framework; sourceTree = "<group>"; };
 		04BF57321FA76A92000B1914 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BF57351FA76A92000B1914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04BF57371FA76A92000B1914 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +70,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049F16DE1FA7901C00A5D280 /* RxCache.framework in Frameworks */,
+				047550771FA78AAB00FAE551 /* NSObject_Rx.framework in Frameworks */,
+				0475506D1FA782C700FAE551 /* RxSwift.framework in Frameworks */,
+				0475506E1FA782C700FAE551 /* Alamofire.framework in Frameworks */,
+				0475506F1FA782C700FAE551 /* RxCocoa.framework in Frameworks */,
+				047550701FA782C700FAE551 /* Result.framework in Frameworks */,
+				047550711FA782C700FAE551 /* Moya.framework in Frameworks */,
+				047550721FA782C700FAE551 /* RxMoya.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +98,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047550661FA782C600FAE551 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				049F16DD1FA7901B00A5D280 /* RxCache.framework */,
+				047550761FA78AAB00FAE551 /* NSObject_Rx.framework */,
+				047550681FA782C700FAE551 /* Alamofire.framework */,
+				0475506B1FA782C700FAE551 /* Moya.framework */,
+				0475506A1FA782C700FAE551 /* Result.framework */,
+				047550691FA782C700FAE551 /* RxCocoa.framework */,
+				0475506C1FA782C700FAE551 /* RxMoya.framework */,
+				047550671FA782C700FAE551 /* RxSwift.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		04BF57291FA76A92000B1914 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +120,7 @@
 				04BF57491FA76A92000B1914 /* TheMovieDBTests */,
 				04BF57541FA76A92000B1914 /* TheMovieDBUITests */,
 				04BF57331FA76A92000B1914 /* Products */,
+				047550661FA782C600FAE551 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +204,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04BF575A1FA76A92000B1914 /* Build configuration list for PBXNativeTarget "TheMovieDB" */;
 			buildPhases = (
+				047550741FA782F100FAE551 /* Carthage */,
 				04BF572E1FA76A92000B1914 /* Sources */,
 				04BF572F1FA76A92000B1914 /* Frameworks */,
 				04BF57301FA76A92000B1914 /* Resources */,
@@ -285,6 +326,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		047550741FA782F100FAE551 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Moya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxMoya.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCache.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Moya.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Result.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCocoa.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxMoya.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxSwift.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCache.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04BF572E1FA76A92000B1914 /* Sources */ = {
@@ -460,6 +534,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LQ5WW9469F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TheMovieDB/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -476,6 +554,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LQ5WW9469F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TheMovieDB/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

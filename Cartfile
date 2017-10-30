@@ -1,0 +1,5 @@
+github "FuckBoilerplate/RxCache"
+github "Moya/Moya"
+github "ReactiveX/RxSwift"
+github "RxSwiftCommunity/NSObject-Rx"
+
