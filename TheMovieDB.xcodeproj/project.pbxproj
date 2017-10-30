@@ -30,6 +30,7 @@
 		049F16FA1FA7B16500A5D280 /* ConfigurationTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F16F91FA7B16500A5D280 /* ConfigurationTarget.swift */; };
 		049F16FD1FA7B2CF00A5D280 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F16FC1FA7B2CF00A5D280 /* Environment.swift */; };
 		049F17001FA7C57A00A5D280 /* TheMovieDBTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F16FF1FA7C57A00A5D280 /* TheMovieDBTarget.swift */; };
+		049F17041FA7D0B700A5D280 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F17031FA7D0B700A5D280 /* Functions.swift */; };
 		04BF57361FA76A92000B1914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF57351FA76A92000B1914 /* AppDelegate.swift */; };
 		04BF57381FA76A92000B1914 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF57371FA76A92000B1914 /* HomeViewController.swift */; };
 		04BF573B1FA76A92000B1914 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BF57391FA76A92000B1914 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 		049F16F91FA7B16500A5D280 /* ConfigurationTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationTarget.swift; sourceTree = "<group>"; };
 		049F16FC1FA7B2CF00A5D280 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		049F16FF1FA7C57A00A5D280 /* TheMovieDBTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBTarget.swift; sourceTree = "<group>"; };
+		049F17031FA7D0B700A5D280 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		04BF57321FA76A92000B1914 /* TheMovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BF57351FA76A92000B1914 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04BF57371FA76A92000B1914 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				049F16FC1FA7B2CF00A5D280 /* Environment.swift */,
+				049F17031FA7D0B700A5D280 /* Functions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				049F16ED1FA7A64100A5D280 /* Language.swift in Sources */,
 				049F16F51FA7AF2600A5D280 /* PageDate.swift in Sources */,
 				049F16EF1FA7A8B400A5D280 /* Movie.swift in Sources */,
+				049F17041FA7D0B700A5D280 /* Functions.swift in Sources */,
 				049F16E31FA7988A00A5D280 /* Configuration.swift in Sources */,
 				049F16EB1FA7A5E800A5D280 /* Country.swift in Sources */,
 				049F16FA1FA7B16500A5D280 /* ConfigurationTarget.swift in Sources */,
