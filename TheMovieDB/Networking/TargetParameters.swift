@@ -6,6 +6,6 @@
 //  Copyright © 2017 Swift Yah. All rights reserved.
 //
 
-struct TheMovieDBKeys {
+struct TargetParameters {
     static let apiKey = "api_key"
 }

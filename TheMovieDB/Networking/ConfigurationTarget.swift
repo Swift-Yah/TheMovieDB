@@ -8,7 +8,7 @@
 
 import enum Moya.Method
 
-enum ConfigurationTarget: TheMovieDBTarget {
+enum ConfigurationTarget: BaseTarget {
     case configuration
 
     var path: String {

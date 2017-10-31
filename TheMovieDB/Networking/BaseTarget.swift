@@ -12,9 +12,9 @@ import protocol Moya.TargetType
 import enum Moya.Task
 import struct Moya.URLEncoding
 
-protocol TheMovieDBTarget: TargetType { }
+protocol BaseTarget: TargetType { }
 
-extension TheMovieDBTarget {
+extension BaseTarget {
     var baseURL: URL {
         guard let url = URL(string: Environment.baseUrl) else {
             fatalError("Please the base url is not available")
@@ -32,7 +32,7 @@ extension TheMovieDBTarget {
     }
     
     var task: Task {
-        return Task.requestParameters(parameters: [TheMovieDBKeys.apiKey: Environment.apiKey],
+        return Task.requestParameters(parameters: [TargetParameters.apiKey: Environment.apiKey],
                                       encoding: URLEncoding.default)
     }
 }

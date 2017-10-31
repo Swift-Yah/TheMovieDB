@@ -8,7 +8,7 @@
 
 import enum Moya.Method
 
-enum MovieTarget: TheMovieDBTarget {
+enum MovieTarget: BaseTarget {
     case detail(id: String)
     case nowPlaying
     case popular

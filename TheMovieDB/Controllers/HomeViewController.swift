@@ -8,6 +8,8 @@
 
 import NSObject_Rx
 import RxCocoa
+import RxFeedback
+import RxSwift
 import UIKit
 
 final class HomeViewController: UIViewController {
@@ -19,30 +21,48 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var detailButton: UIButton!
     @IBOutlet private weak var nowPlayingButton: UIButton!
     
-    // MARK: Rx
-    
-    lazy var viewModel: HomeViewModel = {
-        let input = HomeViewModel.Input(popularTap: popularButton.rx.tap,
-                                        topRatedTap: topRatedButton.rx.tap,
-                                        upcomingTap: upcomingButton.rx.tap,
-                                        configTap: configButton.rx.tap,
-                                        detailTap: detailButton.rx.tap,
-                                        nowPlayingTap: nowPlayingButton.rx.tap)
-        
-        return HomeViewModel(input: input)
-    }()
-    
     // MARK: UIViewController functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupRx()
+        setupFeedback()
+    }
+
+    // MARK: Computed variables
+
+    var binding: HomeFeedback.Feedback {
+        return bind(self, { (controller, state) -> (Bindings<HomeEvent>) in
+            let json = state.map({ $0.result })
+
+            let subscriptions = [
+                json.drive(controller.textView.rx.text)
+            ]
+
+            let events = [
+                controller.popularButton.rx.tap.asSignal().map({ _ in HomeEvent.popularSelected }),
+                controller.topRatedButton.rx.tap.asSignal().map({ _ in HomeEvent.topRatedSelected }),
+                controller.upcomingButton.rx.tap.asSignal().map({ _ in HomeEvent.upcomingSelected }),
+                controller.configButton.rx.tap.asSignal().map({ _ in HomeEvent.configSelected }),
+                controller.detailButton.rx.tap.asSignal().map({ _ in HomeEvent.detailSelected }),
+                controller.nowPlayingButton.rx.tap.asSignal().map({ _ in HomeEvent.nowPlayingSelected })
+            ]
+
+            return Bindings(subscriptions: subscriptions, events: events)
+        })
     }
     
-    // MARK: Functions
+    // MARK: Private functions
     
-    private func setupRx() {
-        viewModel.result.bind(to: textView.rx.text).disposed(by: rx.disposeBag)
+    private func setupFeedback() {
+        let movieService = MovieServiceableFactory.make()
+        let requestJSON: (BaseTarget) -> Single<MovieListResponse> = { target in
+            return movieService.request(token: target)
+        }
+
+        HomeFeedback
+            .system(initialState: .empty, ui: binding, network: requestJSON)
+            .drive()
+            .disposed(by: rx.disposeBag)
     }
 }
