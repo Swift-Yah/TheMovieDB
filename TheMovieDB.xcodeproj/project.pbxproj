@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040194E21FA7DD5D00EDD1F0 /* TheMovieDBKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040194E11FA7DD5D00EDD1F0 /* TheMovieDBKeys.swift */; };
 		0475506D1FA782C700FAE551 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550671FA782C700FAE551 /* RxSwift.framework */; };
 		0475506E1FA782C700FAE551 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550681FA782C700FAE551 /* Alamofire.framework */; };
 		0475506F1FA782C700FAE551 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550691FA782C700FAE551 /* RxCocoa.framework */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040194E11FA7DD5D00EDD1F0 /* TheMovieDBKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBKeys.swift; sourceTree = "<group>"; };
 		047550671FA782C700FAE551 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		047550681FA782C700FAE551 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		047550691FA782C700FAE551 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				049F16F91FA7B16500A5D280 /* ConfigurationTarget.swift */,
 				049F16F71FA7B0ED00A5D280 /* MovieTarget.swift */,
 				049F16FF1FA7C57A00A5D280 /* TheMovieDBTarget.swift */,
+				040194E11FA7DD5D00EDD1F0 /* TheMovieDBKeys.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				04BF57381FA76A92000B1914 /* HomeViewController.swift in Sources */,
 				049F16F81FA7B0ED00A5D280 /* MovieTarget.swift in Sources */,
 				049F16F11FA7ABB400A5D280 /* DateRange.swift in Sources */,
+				040194E21FA7DD5D00EDD1F0 /* TheMovieDBKeys.swift in Sources */,
 				049F16ED1FA7A64100A5D280 /* Language.swift in Sources */,
 				049F16F51FA7AF2600A5D280 /* PageDate.swift in Sources */,
 				049F16EF1FA7A8B400A5D280 /* Movie.swift in Sources */,

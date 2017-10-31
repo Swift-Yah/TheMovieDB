@@ -10,6 +10,7 @@ import struct Foundation.Data
 import struct Foundation.URL
 import protocol Moya.TargetType
 import enum Moya.Task
+import struct Moya.URLEncoding
 
 protocol TheMovieDBTarget: TargetType { }
 
@@ -31,6 +32,7 @@ extension TheMovieDBTarget {
     }
     
     var task: Task {
-        return .requestPlain
+        return Task.requestParameters(parameters: [TheMovieDBKeys.apiKey: Environment.apiKey],
+                                      encoding: URLEncoding.default)
     }
 }
