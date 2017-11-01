@@ -48,6 +48,7 @@
 		53763A291FA855E50096B2C7 /* ControlEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53763A281FA855E50096B2C7 /* ControlEvent.swift */; };
 		53763A2C1FA85B8B0096B2C7 /* MovieServiceableFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53763A2B1FA85B8B0096B2C7 /* MovieServiceableFactory.swift */; };
 		53763A2F1FA861890096B2C7 /* MovieServiceable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53763A2E1FA861890096B2C7 /* MovieServiceable.swift */; };
+		5380173C1FA95DC90083EB66 /* MovieGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5380173B1FA95DC90083EB66 /* MovieGateway.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		53763A281FA855E50096B2C7 /* ControlEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlEvent.swift; sourceTree = "<group>"; };
 		53763A2B1FA85B8B0096B2C7 /* MovieServiceableFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceableFactory.swift; sourceTree = "<group>"; };
 		53763A2E1FA861890096B2C7 /* MovieServiceable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceable.swift; sourceTree = "<group>"; };
+		5380173B1FA95DC90083EB66 /* MovieGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGateway.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +232,7 @@
 		04BF57341FA76A92000B1914 /* TheMovieDB */ = {
 			isa = PBXGroup;
 			children = (
+				5380173A1FA95D400083EB66 /* Gateways */,
 				04BF57631FA76DE3000B1914 /* Commons */,
 				04BF57641FA76DE9000B1914 /* Controllers */,
 				53763A1C1FA838250096B2C7 /* Errors */,
@@ -363,6 +366,14 @@
 				53763A251FA846FD0096B2C7 /* MovieService.swift */,
 			);
 			path = Implementations;
+			sourceTree = "<group>";
+		};
+		5380173A1FA95D400083EB66 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				5380173B1FA95DC90083EB66 /* MovieGateway.swift */,
+			);
+			path = Gateways;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,6 +557,7 @@
 				53763A2F1FA861890096B2C7 /* MovieServiceable.swift in Sources */,
 				049F17001FA7C57A00A5D280 /* BaseTarget.swift in Sources */,
 				04BF57381FA76A92000B1914 /* HomeViewController.swift in Sources */,
+				5380173C1FA95DC90083EB66 /* MovieGateway.swift in Sources */,
 				049F16F81FA7B0ED00A5D280 /* MovieTarget.swift in Sources */,
 				53763A231FA8429B0096B2C7 /* HomeFeedback.swift in Sources */,
 				049F16F11FA7ABB400A5D280 /* DateRange.swift in Sources */,

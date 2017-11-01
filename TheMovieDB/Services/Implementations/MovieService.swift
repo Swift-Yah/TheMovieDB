@@ -11,13 +11,13 @@ import RxMoya
 import RxSwift
 
 struct MovieService: MovieServiceable {
-    private let movieProvider: MoyaProvider<MovieTarget>
+    private let movieGateway: MovieGateway
     private let configurationProvider: MoyaProvider<ConfigurationTarget>
 
     // MARK: Initializers
 
-    init(movieProvider: MoyaProvider<MovieTarget>, configurationProvider: MoyaProvider<ConfigurationTarget>) {
-        self.movieProvider = movieProvider
+    init(movieGateway: MovieGateway, configurationProvider: MoyaProvider<ConfigurationTarget>) {
+        self.movieGateway = movieGateway
         self.configurationProvider = configurationProvider
     }
 
@@ -27,7 +27,7 @@ struct MovieService: MovieServiceable {
         var response: Single<Response>? = nil
 
         if let movieTarget = token as? MovieTarget {
-            response = request(movie: movieTarget)
+            response = movieGateway.request(target: movieTarget)
         } else if let configurationTarget = token as? ConfigurationTarget {
             response = request(configuration: configurationTarget)
         }
@@ -62,10 +62,6 @@ struct MovieService: MovieServiceable {
 
             return Disposables.create()
         })
-    }
-
-    private func request(movie: MovieTarget) -> Single<Response> {
-        return movieProvider.rx.request(movie)
     }
 
     private func request(configuration: ConfigurationTarget) -> Single<Response> {

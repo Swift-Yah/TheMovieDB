@@ -14,9 +14,9 @@ struct MovieServiceableFactory {
     // MARK: Functions
 
     static func make() -> MovieServiceable {
-        let movieProvider = MoyaProvider<MovieTarget>()
+        let movieGateway = MovieMoyaGateway()
         let configurationProvider = MoyaProvider<ConfigurationTarget>()
-        let movieService = MovieService(movieProvider: movieProvider, configurationProvider: configurationProvider)
+        let movieService = MovieService(movieGateway: movieGateway, configurationProvider: configurationProvider)
 
         return movieService
     }
