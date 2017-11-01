@@ -6,7 +6,7 @@
 //  Copyright © 2017 Swift Yah. All rights reserved.
 //
 
-struct Page<T: Codable>: Codable {
+class Page<T: Codable>: Codable {
     enum CodingKeys: String, CodingKey {
         case page
         case results
@@ -18,4 +18,11 @@ struct Page<T: Codable>: Codable {
     let results: [T]
     let totalResults: Int
     let totalPages: Int
+    
+    init() {
+        page = 0
+        results = []
+        totalPages = 0
+        totalResults = 0
+    }
 }

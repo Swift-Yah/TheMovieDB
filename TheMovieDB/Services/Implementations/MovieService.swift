@@ -27,7 +27,7 @@ struct MovieService: MovieServiceable {
         var response: Single<Response>? = nil
 
         if let movieTarget = token as? MovieTarget {
-            response = movieGateway.request(target: movieTarget)
+//            response = movieGateway.getPopular()
         } else if let configurationTarget = token as? ConfigurationTarget {
             response = request(configuration: configurationTarget)
         }

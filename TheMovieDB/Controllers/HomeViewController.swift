@@ -33,19 +33,17 @@ final class HomeViewController: UIViewController {
 
     var binding: HomeFeedback.Feedback {
         return bind(self, { (controller, state) -> (Bindings<HomeEvent>) in
-            let json = state.map({ $0.result })
-
             let subscriptions = [
-                json.drive(controller.textView.rx.text)
+                state.map({ $0.result }).drive(controller.textView.rx.text)
             ]
 
             let events = [
-                controller.popularButton.rx.tap.asSignal().map({ _ in HomeEvent.popularSelected }),
-                controller.topRatedButton.rx.tap.asSignal().map({ _ in HomeEvent.topRatedSelected }),
-                controller.upcomingButton.rx.tap.asSignal().map({ _ in HomeEvent.upcomingSelected }),
-                controller.configButton.rx.tap.asSignal().map({ _ in HomeEvent.configSelected }),
-                controller.detailButton.rx.tap.asSignal().map({ _ in HomeEvent.detailSelected }),
-                controller.nowPlayingButton.rx.tap.asSignal().map({ _ in HomeEvent.nowPlayingSelected })
+                controller.popularButton.rx.tap.asSignal().map({ HomeEvent.popularSelected }),
+                controller.topRatedButton.rx.tap.asSignal().map({ HomeEvent.topRatedSelected }),
+                controller.upcomingButton.rx.tap.asSignal().map({ HomeEvent.upcomingSelected }),
+                controller.configButton.rx.tap.asSignal().map({ HomeEvent.configSelected }),
+                controller.detailButton.rx.tap.asSignal().map({ HomeEvent.detailSelected }),
+                controller.nowPlayingButton.rx.tap.asSignal().map({ HomeEvent.nowPlayingSelected })
             ]
 
             return Bindings(subscriptions: subscriptions, events: events)

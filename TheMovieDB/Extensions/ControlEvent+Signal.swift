@@ -6,7 +6,8 @@
 //  Copyright © 2017 Swift Yah. All rights reserved.
 //
 
-import RxCocoa
+import struct RxCocoa.ControlEvent
+import struct RxCocoa.Signal
 
 extension ControlEvent {
     func asSignal() -> Signal<E> {
