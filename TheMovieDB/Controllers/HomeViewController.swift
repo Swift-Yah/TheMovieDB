@@ -7,9 +7,7 @@
 //
 
 import NSObject_Rx
-import RxCocoa
 import RxFeedback
-import RxSwift
 import UIKit
 
 final class HomeViewController: UIViewController {
@@ -21,6 +19,12 @@ final class HomeViewController: UIViewController {
     @IBOutlet private weak var detailButton: UIButton!
     @IBOutlet private weak var nowPlayingButton: UIButton!
     
+    // MARK: Dependency Injection
+    
+    lazy var viewState: HomeState = {
+        return HomeStateFactory.make()
+    }()
+    
     // MARK: UIViewController functions
     
     override func viewDidLoad() {
@@ -29,9 +33,9 @@ final class HomeViewController: UIViewController {
         setupFeedback()
     }
 
-    // MARK: Computed variables
+    // MARK: Private Computed variables
 
-    var binding: HomeFeedback.Feedback {
+    private var binding: HomeFeedback.Feedback {
         return bind(self, { (controller, state) -> (Bindings<HomeEvent>) in
             let subscriptions = [
                 state.map({ $0.result }).drive(controller.textView.rx.text)
@@ -42,7 +46,7 @@ final class HomeViewController: UIViewController {
                 controller.topRatedButton.rx.tap.asSignal().map({ HomeEvent.topRatedSelected }),
                 controller.upcomingButton.rx.tap.asSignal().map({ HomeEvent.upcomingSelected }),
                 controller.configButton.rx.tap.asSignal().map({ HomeEvent.configSelected }),
-                controller.detailButton.rx.tap.asSignal().map({ HomeEvent.detailSelected }),
+                controller.detailButton.rx.tap.asSignal().map({ HomeEvent.detailSelected(id: "211672") }),
                 controller.nowPlayingButton.rx.tap.asSignal().map({ HomeEvent.nowPlayingSelected })
             ]
 
@@ -53,14 +57,6 @@ final class HomeViewController: UIViewController {
     // MARK: Private functions
     
     private func setupFeedback() {
-        let movieService = MovieServiceableFactory.make()
-        let requestJSON: (BaseTarget) -> Single<MovieListResponse> = { target in
-            return movieService.request(token: target)
-        }
-
-        HomeFeedback
-            .system(initialState: .empty, ui: binding, network: requestJSON)
-            .drive()
-            .disposed(by: rx.disposeBag)
+        HomeFeedback.system(initialState: viewState, ui: binding).drive().disposed(by: rx.disposeBag)
     }
 }

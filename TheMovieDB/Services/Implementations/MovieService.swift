@@ -39,19 +39,19 @@ struct MovieService: MovieServiceable {
         let maxAttemps = 4
 
         return requiredResponse
-            .retry(3)
+//            .retry(3)
             .map(MovieService.parse)
-            .retryWhen({ (errorTrigger: Observable<Error>) in
-                errorTrigger.enumerated().flatMap({ (attempt, error) -> Observable<Int> in
-                    if attempt >= maxAttemps - 1 {
-                        return Observable.error(error)
-                    }
-
-                    let dueTime = Double(attempt + 1)
-
-                    return Observable<Int>.timer(dueTime, scheduler: MainScheduler.instance).take(1)
-                })
-            })
+//            .retryWhen({ (errorTrigger: Observable<Error>) in
+//                errorTrigger.enumerated().flatMap({ (attempt, error) -> Observable<Int> in
+//                    if attempt >= maxAttemps - 1 {
+//                        return Observable.error(error)
+//                    }
+//
+//                    let dueTime = Double(attempt + 1)
+//
+//                    return Observable<Int>.timer(dueTime, scheduler: MainScheduler.instance).take(1)
+//                })
+//            })
     }
 
     // MARK: Private functions

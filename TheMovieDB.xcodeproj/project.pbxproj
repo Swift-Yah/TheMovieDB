@@ -12,6 +12,13 @@
 		04359DAE1FAA89DE007E1452 /* EncodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DAD1FAA89DE007E1452 /* EncodableError.swift */; };
 		04359DB01FAA8A7C007E1452 /* PrimitiveSequence+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DAF1FAA8A7C007E1452 /* PrimitiveSequence+Encodable.swift */; };
 		04359DB31FAA8BA0007E1452 /* ListPopularMovieCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DB21FAA8BA0007E1452 /* ListPopularMovieCommand.swift */; };
+		04359DB51FAA9203007E1452 /* MovieGatewayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DB41FAA9203007E1452 /* MovieGatewayFactory.swift */; };
+		04359DB91FAA93F7007E1452 /* MovieMoyaGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DB81FAA93F7007E1452 /* MovieMoyaGateway.swift */; };
+		04359DBB1FAA9456007E1452 /* ConfigurationGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DBA1FAA9456007E1452 /* ConfigurationGateway.swift */; };
+		04359DBD1FAA946A007E1452 /* MoyaGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DBC1FAA946A007E1452 /* MoyaGateway.swift */; };
+		04359DBF1FAA94AE007E1452 /* ConfigurationMoyaGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DBE1FAA94AE007E1452 /* ConfigurationMoyaGateway.swift */; };
+		04359DC11FAA952E007E1452 /* ConfigurationGatewayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DC01FAA952E007E1452 /* ConfigurationGatewayFactory.swift */; };
+		04359DCB1FAA9D76007E1452 /* HomeStateFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04359DCA1FAA9D76007E1452 /* HomeStateFactory.swift */; };
 		0475506D1FA782C700FAE551 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550671FA782C700FAE551 /* RxSwift.framework */; };
 		0475506E1FA782C700FAE551 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550681FA782C700FAE551 /* Alamofire.framework */; };
 		0475506F1FA782C700FAE551 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047550691FA782C700FAE551 /* RxCocoa.framework */; };
@@ -78,6 +85,13 @@
 		04359DAD1FAA89DE007E1452 /* EncodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodableError.swift; sourceTree = "<group>"; };
 		04359DAF1FAA8A7C007E1452 /* PrimitiveSequence+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrimitiveSequence+Encodable.swift"; sourceTree = "<group>"; };
 		04359DB21FAA8BA0007E1452 /* ListPopularMovieCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPopularMovieCommand.swift; sourceTree = "<group>"; };
+		04359DB41FAA9203007E1452 /* MovieGatewayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGatewayFactory.swift; sourceTree = "<group>"; };
+		04359DB81FAA93F7007E1452 /* MovieMoyaGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieMoyaGateway.swift; sourceTree = "<group>"; };
+		04359DBA1FAA9456007E1452 /* ConfigurationGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationGateway.swift; sourceTree = "<group>"; };
+		04359DBC1FAA946A007E1452 /* MoyaGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaGateway.swift; sourceTree = "<group>"; };
+		04359DBE1FAA94AE007E1452 /* ConfigurationMoyaGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationMoyaGateway.swift; sourceTree = "<group>"; };
+		04359DC01FAA952E007E1452 /* ConfigurationGatewayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationGatewayFactory.swift; sourceTree = "<group>"; };
+		04359DCA1FAA9D76007E1452 /* HomeStateFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeStateFactory.swift; sourceTree = "<group>"; };
 		047550671FA782C700FAE551 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		047550681FA782C700FAE551 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		047550691FA782C700FAE551 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -176,6 +190,33 @@
 				04359DB21FAA8BA0007E1452 /* ListPopularMovieCommand.swift */,
 			);
 			path = Implementations;
+			sourceTree = "<group>";
+		};
+		04359DB61FAA9283007E1452 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				04359DC01FAA952E007E1452 /* ConfigurationGatewayFactory.swift */,
+				04359DB41FAA9203007E1452 /* MovieGatewayFactory.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		04359DB71FAA93C5007E1452 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				04359DBE1FAA94AE007E1452 /* ConfigurationMoyaGateway.swift */,
+				04359DB81FAA93F7007E1452 /* MovieMoyaGateway.swift */,
+				04359DBC1FAA946A007E1452 /* MoyaGateway.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		04359DC91FAA9D76007E1452 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				04359DCA1FAA9D76007E1452 /* HomeStateFactory.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 		047550661FA782C600FAE551 /* Frameworks */ = {
@@ -383,6 +424,8 @@
 		53763A2A1FA85B4C0096B2C7 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				04359DC91FAA9D76007E1452 /* States */,
+				04359DB61FAA9283007E1452 /* Gateways */,
 				53763A2B1FA85B8B0096B2C7 /* MovieServiceableFactory.swift */,
 			);
 			path = Factories;
@@ -399,7 +442,9 @@
 		5380173A1FA95D400083EB66 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				04359DB71FAA93C5007E1452 /* Implementations */,
 				5380173B1FA95DC90083EB66 /* MovieGateway.swift */,
+				04359DBA1FAA9456007E1452 /* ConfigurationGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -577,6 +622,8 @@
 				53763A191FA834AD0096B2C7 /* HomeEvent.swift in Sources */,
 				53763A2C1FA85B8B0096B2C7 /* MovieServiceableFactory.swift in Sources */,
 				04359DB01FAA8A7C007E1452 /* PrimitiveSequence+Encodable.swift in Sources */,
+				04359DCB1FAA9D76007E1452 /* HomeStateFactory.swift in Sources */,
+				04359DBF1FAA94AE007E1452 /* ConfigurationMoyaGateway.swift in Sources */,
 				049F16E11FA7961B00A5D280 /* ImageConfiguration.swift in Sources */,
 				049F16E91FA7A3F400A5D280 /* Company.swift in Sources */,
 				04359DB31FAA8BA0007E1452 /* ListPopularMovieCommand.swift in Sources */,
@@ -592,18 +639,23 @@
 				53763A231FA8429B0096B2C7 /* HomeFeedback.swift in Sources */,
 				049F16F11FA7ABB400A5D280 /* DateRange.swift in Sources */,
 				040194E21FA7DD5D00EDD1F0 /* TargetParameters.swift in Sources */,
+				04359DB51FAA9203007E1452 /* MovieGatewayFactory.swift in Sources */,
 				049F16ED1FA7A64100A5D280 /* Language.swift in Sources */,
 				049F16F51FA7AF2600A5D280 /* PageDate.swift in Sources */,
 				53763A201FA83B630096B2C7 /* MovieServiceError.swift in Sources */,
 				53763A1E1FA83AB00096B2C7 /* Result.swift in Sources */,
+				04359DBB1FAA9456007E1452 /* ConfigurationGateway.swift in Sources */,
 				049F16EF1FA7A8B400A5D280 /* Movie.swift in Sources */,
 				049F17041FA7D0B700A5D280 /* Functions.swift in Sources */,
 				04359DAE1FAA89DE007E1452 /* EncodableError.swift in Sources */,
+				04359DC11FAA952E007E1452 /* ConfigurationGatewayFactory.swift in Sources */,
 				049F16E31FA7988A00A5D280 /* Configuration.swift in Sources */,
+				04359DBD1FAA946A007E1452 /* MoyaGateway.swift in Sources */,
 				04359DAC1FAA8488007E1452 /* HomeCommand.swift in Sources */,
 				049F16EB1FA7A5E800A5D280 /* Country.swift in Sources */,
 				049F16FA1FA7B16500A5D280 /* ConfigurationTarget.swift in Sources */,
 				53763A1B1FA835590096B2C7 /* HomeState.swift in Sources */,
+				04359DB91FAA93F7007E1452 /* MovieMoyaGateway.swift in Sources */,
 				049F16E71FA7A20E00A5D280 /* Genre.swift in Sources */,
 				04BF57361FA76A92000B1914 /* AppDelegate.swift in Sources */,
 				049F16E51FA799BF00A5D280 /* MovieDetail.swift in Sources */,

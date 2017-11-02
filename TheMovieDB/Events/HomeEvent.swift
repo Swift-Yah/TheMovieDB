@@ -13,7 +13,7 @@ enum HomeEvent {
     case topRatedSelected
     case upcomingSelected
     case configSelected
-    case detailSelected
+    case detailSelected(id: String)
     case nowPlayingSelected
     case response(MovieListResponse)
 }

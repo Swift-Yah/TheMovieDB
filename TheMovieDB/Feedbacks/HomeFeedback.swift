@@ -17,14 +17,13 @@ struct HomeFeedback {
     typealias Feedback = (Driver<HomeState>) -> Signal<HomeEvent>
 
     static func system(initialState: HomeState,
-                       ui: @escaping Feedback,
-                       network: @escaping (BaseTarget) -> Single<MovieListResponse>) -> Driver<HomeState> {
-        let networkFeedback: Feedback = react(query: { $0.endpoint }) { target -> Signal<HomeEvent> in
-            return network(target)
+                       ui: @escaping Feedback) -> Driver<HomeState> {
+        let networkFeedback: Feedback = react(query: { $0.command }) { command -> Signal<HomeEvent> in
+            return command.execute().map({ .success($0) })
                 .asSignal(onErrorJustReturn: .failure(.offline))
                 .map(HomeEvent.response)
         }
 
-        return Driver<Any>.system(initialState: .empty, reduce: HomeState.reduce, feedback: ui, networkFeedback)
+        return Driver<Any>.system(initialState: initialState, reduce: HomeState.reduce, feedback: ui, networkFeedback)
     }
 }
