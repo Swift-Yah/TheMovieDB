@@ -17,7 +17,7 @@ struct ListDetailMovieCommmand: HomeCommand {
         self.movieId = movieId
     }
 
-    func execute() -> Single<String> {
-        return movieGateway.getDetail(id: movieId).mapString()
+    func execute() -> Single<StringResponse> {
+        return movieGateway.getDetail(id: movieId)
     }
 }

@@ -12,7 +12,7 @@ import struct RxSwift.Single
 struct ConfigurationMoyaGateway: MoyaGateway, ConfigurationGateway {
     private let configurationProvider = MoyaProvider<ConfigurationTarget>()
     
-    func get() -> Single<Configuration> {
-        return request(.configuration, using: configurationProvider)
+    func get() -> Single<StringResponse> {
+        return requestString(.configuration, using: configurationProvider)
     }
 }

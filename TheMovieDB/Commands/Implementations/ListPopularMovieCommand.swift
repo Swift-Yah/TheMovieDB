@@ -15,7 +15,7 @@ struct ListPopularMovieCommand: HomeCommand {
         self.movieGateway = movieGateway
     }
     
-    func execute() -> Single<String> {
-        return movieGateway.getPopular().mapString()
+    func execute() -> Single<StringResponse> {
+        return movieGateway.getPopular()
     }
 }

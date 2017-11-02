@@ -19,7 +19,7 @@ struct HomeFeedback {
     static func system(initialState: HomeState,
                        ui: @escaping Feedback) -> Driver<HomeState> {
         let networkFeedback: Feedback = react(query: { $0.command }) { command -> Signal<HomeEvent> in
-            return command.execute().map({ .success($0) })
+            return command.execute()
                 .asSignal(onErrorJustReturn: .failure(.offline))
                 .map(HomeEvent.response)
         }

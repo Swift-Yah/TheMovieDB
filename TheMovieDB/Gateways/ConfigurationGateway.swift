@@ -9,6 +9,5 @@
 import struct RxSwift.Single
 
 protocol ConfigurationGateway {
-    func get() -> Single<Configuration>
+    func get() -> Single<StringResponse>
 }
-

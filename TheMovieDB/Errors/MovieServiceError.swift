@@ -8,7 +8,7 @@
 
 enum MovieServiceError: Error {
     case apiKeyRequired
-    case injectionMismatch
+    case objectMapping(Error)
     case notFound
     case offline
 }

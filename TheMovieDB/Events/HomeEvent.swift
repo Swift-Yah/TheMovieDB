@@ -6,8 +6,6 @@
 //  Copyright © 2017 Swift Yah. All rights reserved.
 //
 
-typealias MovieListResponse = Result<String, MovieServiceError>
-
 enum HomeEvent {
     case popularSelected
     case topRatedSelected
@@ -15,5 +13,5 @@ enum HomeEvent {
     case configSelected
     case detailSelected(id: String)
     case nowPlayingSelected
-    case response(MovieListResponse)
+    case response(StringResponse)
 }

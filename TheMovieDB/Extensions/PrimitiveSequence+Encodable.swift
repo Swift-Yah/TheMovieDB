@@ -11,16 +11,17 @@ import enum RxSwift.SingleTrait
 import struct RxSwift.Single
 import struct RxSwift.PrimitiveSequence
 
-extension PrimitiveSequence where Trait == SingleTrait, Element: Encodable {
-    func mapString() -> Single<String> {
-        return flatMap({ value -> Single<String> in
-            let data = try JSONEncoder().encode(value)
-            
-            guard let jsonString = String(data: data, encoding: .utf8) else {
-                throw EncodableError.stringMapping(value)
-            }
-            
-            return Single.just(jsonString)
-        })
-    }
-}
+//extension PrimitiveSequence where Trait == SingleTrait, Element: Encodable {
+//    func mapString() -> Single<String> {
+//        return flatMap({ value -> Single<String> in
+//            let data = try JSONEncoder().encode(value)
+//            
+//            guard let jsonString = String(data: data, encoding: .utf8) else {
+//                throw EncodableError.stringMapping(value)
+//            }
+//            
+//            return Single.just(jsonString)
+//        })
+//    }
+//}
+

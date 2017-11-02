@@ -9,5 +9,5 @@
 import struct RxSwift.Single
 
 protocol HomeCommand {
-	func execute() -> Single<String>
+	func execute() -> Single<StringResponse>
 }

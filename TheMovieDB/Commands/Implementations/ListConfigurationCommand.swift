@@ -15,7 +15,7 @@ struct ListConfigurationCommand: HomeCommand {
         self.configurationGateway = configurationGateway
     }
 
-    func execute() -> Single<String> {
-        return configurationGateway.get().mapString()
+    func execute() -> Single<StringResponse> {
+        return configurationGateway.get()
     }
 }

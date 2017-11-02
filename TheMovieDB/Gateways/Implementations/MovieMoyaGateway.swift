@@ -12,25 +12,25 @@ import struct RxSwift.Single
 struct MovieMoyaGateway: MoyaGateway, MovieGateway {
     private let movieProvider = MoyaProvider<MovieTarget>()
     
-    func getDetail(id: String) -> Single<MovieDetail> {
+    func getDetail(id: String) -> Single<StringResponse> {
         let detailEndpoint = MovieTarget.detail(id: id)
         
-        return request(detailEndpoint, using: movieProvider)
+        return requestString(detailEndpoint, using: movieProvider)
     }
     
-    func getNowPlaying() -> Single<PageDate<Movie>> {
-        return request(.nowPlaying, using: movieProvider)
+    func getNowPlaying() -> Single<StringResponse> {
+        return requestString(.nowPlaying, using: movieProvider)
     }
     
-    func getPopular() -> Single<Page<Movie>> {
-        return request(.popular, using: movieProvider)
+    func getPopular() -> Single<StringResponse> {
+        return requestString(.popular, using: movieProvider)
     }
     
-    func getTopRated() -> Single<Page<Movie>> {
-        return request(.topRated, using: movieProvider)
+    func getTopRated() -> Single<StringResponse> {
+        return requestString(.topRated, using: movieProvider)
     }
     
-    func getUpcoming() -> Single<PageDate<Movie>> {
-        return request(.upcoming, using: movieProvider)
+    func getUpcoming() -> Single<StringResponse> {
+        return requestString(.upcoming, using: movieProvider)
     }
 }

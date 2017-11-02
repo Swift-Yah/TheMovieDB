@@ -15,7 +15,7 @@ struct ListNowPlayingCommand: HomeCommand {
         self.movieGateway = movieGateway
     }
 
-    func execute() -> Single<String> {
-        return movieGateway.getNowPlaying().mapString()
+    func execute() -> Single<StringResponse> {
+        return movieGateway.getNowPlaying()
     }
 }

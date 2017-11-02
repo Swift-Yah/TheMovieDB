@@ -15,7 +15,7 @@ struct ListTopRatedMovieCommand: HomeCommand {
         self.movieGateway = movieGateway
     }
 
-    func execute() -> Single<String> {
-        return movieGateway.getTopRated().mapString()
+    func execute() -> Single<StringResponse> {
+        return movieGateway.getTopRated()
     }
 }

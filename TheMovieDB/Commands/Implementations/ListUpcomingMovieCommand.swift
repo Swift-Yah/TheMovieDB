@@ -15,7 +15,7 @@ struct ListUpcomingMovieCommand: HomeCommand {
         self.movieGateway = movieGateway
     }
 
-    func execute() -> Single<String> {
-        return movieGateway.getUpcoming().mapString()
+    func execute() -> Single<StringResponse> {
+        return movieGateway.getUpcoming()
     }
 }
