@@ -36,7 +36,7 @@ final class HomeViewController: UIViewController {
     // MARK: Private Computed variables
 
     private var binding: HomeFeedback.Feedback {
-        return bind(self, { (controller, state) -> (Bindings<HomeEvent>) in
+        return bind(self, { (controller, state) -> Bindings<HomeEvent> in
             let subscriptions = [
                 state.map({ $0.result }).drive(controller.textView.rx.text)
             ]

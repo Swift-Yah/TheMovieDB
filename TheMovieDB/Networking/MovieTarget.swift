@@ -21,7 +21,7 @@ enum MovieTarget: BaseTarget {
     
     var path: String {
         switch self {
-        case let .detail(id): return "/movie/\(id)"
+        case let .detail(id): return "/movie/" + id
         case .nowPlaying: return "/movie/now_playing"
         case .popular: return "/movie/popular"
         case .topRated: return "/movie/top_rated"

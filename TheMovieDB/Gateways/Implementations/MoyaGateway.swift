@@ -24,8 +24,8 @@ extension MoyaGateway {
         return provider.rx.request(token)
             .retry(3)
             .map(U.self)
-            .retryWhen({ errorTrigger in
-                return errorTrigger.enumerated().flatMap({ (attempt, error) -> Observable<Int> in
+            .retryWhen({ (errorTrigger: Observable<Error>) in
+                return errorTrigger.enumerated().flatMap({ (attempt: Int, error: Error) -> Observable<Int> in
                     guard attempt < maxAttempts - 1 else { return Observable.error(error) }
 
                     return Observable<Int>.interval(attempt + 1, scheduler: MainScheduler.instance).take(1)
@@ -46,54 +46,5 @@ extension MoyaGateway {
                     return Observable<Int>.interval(attemp + 1, scheduler: MainScheduler.instance).take(1)
                 })
             })
-    }
-}
-
-import class Foundation.JSONDecoder
-import struct RxSwift.PrimitiveSequence
-import struct RxSwift.Single
-import enum RxSwift.SingleTrait
-import class Moya.Response
-import enum Moya.MoyaError
-
-extension PrimitiveSequence where Element == Response, Trait == SingleTrait {
-    func map<D: Decodable>(_ type: D.Type, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder = JSONDecoder()) -> Single<Result<D, MovieServiceError>> {
-        return flatMap({ response -> Single<Result<D, MovieServiceError>> in
-            let result = try PrimitiveSequence.mapResult(response: response) { response in
-                try response.map(type, atKeyPath: keyPath, using: decoder)
-            }
-
-            return Single.just(result)
-        })
-    }
-
-    func mapString(atKeyPath keyPath: String? = nil) -> Single<Result<String, MovieServiceError>> {
-        return flatMap({ response -> Single<Result<String, MovieServiceError>> in
-            let result = try PrimitiveSequence.mapResult(response: response) { response in
-                try response.mapString(atKeyPath: keyPath)
-            }
-
-            return Single.just(result)
-        })
-    }
-
-    private static func mapResult<T>(response: Response, mapper: @escaping (Response) throws -> T) throws -> Result<T, MovieServiceError> {
-        if response.statusCode == 401 {
-            return .failure(.apiKeyRequired)
-        }
-
-        if response.statusCode == 404 {
-            return .failure(.notFound)
-        }
-
-        let json: T
-
-        do {
-            json = try mapper(response)
-        } catch let MoyaError.objectMapping(error, _) {
-            return .failure(.objectMapping(error))
-        }
-
-        return .success(json)
     }
 }
