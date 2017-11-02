@@ -57,7 +57,6 @@ struct HomeState {
             
         case .response(.failure(let error)):
             newState.error = error
-            
         }
 
         return newState

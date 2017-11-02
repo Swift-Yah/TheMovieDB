@@ -31,6 +31,6 @@ struct MovieMoyaGateway: MoyaGateway, MovieGateway {
     }
     
     func getUpcoming() -> Single<PageDate<Movie>> {
-        return request(.topRated, using: movieProvider)
+        return request(.upcoming, using: movieProvider)
     }
 }

@@ -25,7 +25,7 @@ struct MovieDetail: Codable {
         case releaseDate = "release_date"
         case revenue
         case runtime
-        case spokenLanguages
+        case spokenLanguages = "spoken_languages"
         case status
         case tagline
         case title
@@ -44,7 +44,7 @@ struct MovieDetail: Codable {
     let originalLanguage: String
     let originalTitle: String
     let overview: String?
-    let popularity: Int
+    let popularity: Double
     let posterPath: String?
     let productionCompanies: [Company]
     let productionCountries: [Country]

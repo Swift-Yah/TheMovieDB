@@ -10,14 +10,14 @@ struct PageDate<T: Codable>: Codable {
     enum CodingKeys: String, CodingKey {
         case page
         case results
-        case date
+        case dates
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
     
     let page: Int
     let results: [T]
-    let date: DateRange
+    let dates: DateRange
     let totalPages: Int
     let totalResults: Int
 }

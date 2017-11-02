@@ -13,5 +13,5 @@ struct Configuration: Codable {
     }
     
     let images: ImageConfiguration
-    let changeKeys: String
+    let changeKeys: [String]
 }
