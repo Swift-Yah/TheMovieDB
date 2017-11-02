@@ -13,12 +13,12 @@ import struct RxSwift.Single
 import RxMoya
 
 protocol MoyaGateway {
-    func request<T, U: Decodable>(_ token: T, using: MoyaProvider<T>) -> Single<Result<U, MovieServiceError>>
-    func requestString<T>(_ token: T, using: MoyaProvider<T>) -> Single<Result<String, MovieServiceError>>
+    func request<T, U: Decodable>(_ token: T, using: MoyaProvider<T>) -> Single<Result<U, MovieError>>
+    func requestString<T>(_ token: T, using: MoyaProvider<T>) -> Single<Result<String, MovieError>>
 }
 
 extension MoyaGateway {
-    func request<T, U: Decodable>(_ token: T, using provider: MoyaProvider<T>) -> Single<Result<U, MovieServiceError>> {
+    func request<T, U: Decodable>(_ token: T, using provider: MoyaProvider<T>) -> Single<Result<U, MovieError>> {
         let maxAttempts = 4
 
         return provider.rx.request(token)
@@ -33,7 +33,7 @@ extension MoyaGateway {
             })
     }
 
-    func requestString<T>(_ token: T, using provider: MoyaProvider<T>) -> Single<Result<String, MovieServiceError>> {
+    func requestString<T>(_ token: T, using provider: MoyaProvider<T>) -> Single<Result<String, MovieError>> {
         let maxAttempts = 4
 
         return provider.rx.request(token)

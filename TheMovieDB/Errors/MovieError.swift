@@ -6,7 +6,7 @@
 //  Copyright © 2017 Swift Yah. All rights reserved.
 //
 
-enum MovieServiceError: Error {
+enum MovieError: Error {
     case apiKeyRequired
     case objectMapping(Error)
     case notFound

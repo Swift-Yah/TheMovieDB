@@ -6,9 +6,9 @@
 //  Copyright © 2017 Swift Yah. All rights reserved.
 //
 
-typealias ConfigurationResponse = Result<Configuration, MovieServiceError>
-typealias StringResponse = Result<String, MovieServiceError>
-typealias DecodableResponse = Result<Decodable, MovieServiceError>
-typealias MovieDetailResponse = Result<MovieDetail, MovieServiceError>
-typealias MoviePageResponse = Result<Page<Movie>, MovieServiceError>
-typealias MoviePageDateResponse = Result<PageDate<Movie>, MovieServiceError>
+typealias ConfigurationResponse = Result<Configuration, MovieError>
+typealias StringResponse = Result<String, MovieError>
+typealias DecodableResponse = Result<Decodable, MovieError>
+typealias MovieDetailResponse = Result<MovieDetail, MovieError>
+typealias MoviePageResponse = Result<Page<Movie>, MovieError>
+typealias MoviePageDateResponse = Result<PageDate<Movie>, MovieError>
