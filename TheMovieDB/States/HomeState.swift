@@ -8,7 +8,6 @@
 
 struct HomeState {
     var command: HomeCommand?
-    var endpoint: BaseTarget?
     var error: Error?
     var result: String
     
@@ -17,10 +16,9 @@ struct HomeState {
     
     // MARK: Initializers
     
-    init(command: HomeCommand? = nil, endpoint: BaseTarget? = nil, error: Error? = nil, result: String = "",
-         movieGateway: MovieGateway, configurationGateway: ConfigurationGateway) {
+    init(command: HomeCommand? = nil, error: Error? = nil, result: String = "", movieGateway: MovieGateway,
+         configurationGateway: ConfigurationGateway) {
         self.command = command
-        self.endpoint = endpoint
         self.error = error
         self.result = result
         self.movieGateway = movieGateway
@@ -31,30 +29,28 @@ struct HomeState {
 
     static func reduce(state: HomeState, event: HomeEvent) -> HomeState {
         var newState = state
+        newState.command = nil
         newState.error = nil
         newState.result = ""
-        newState.endpoint = nil
-        newState.command = nil
 
         switch event {
         case .popularSelected:
-            newState.endpoint = MovieTarget.popular
             newState.command = ListPopularMovieCommand(movieGateway: state.movieGateway)
             
         case .topRatedSelected:
-            newState.endpoint = MovieTarget.topRated
+            newState.command = ListTopRatedMovieCommand(movieGateway: state.movieGateway)
             
         case .upcomingSelected:
-            newState.endpoint = MovieTarget.upcoming
+            newState.command = ListUpcomingMovieCommand(movieGateway: state.movieGateway)
             
         case .configSelected:
-            newState.endpoint = ConfigurationTarget.configuration
+            newState.command = ListConfigurationCommand(configurationGateway: state.configurationGateway)
             
         case .detailSelected(let id):
-            newState.endpoint = MovieTarget.detail(id: id)
+            newState.command = ListDetailMovieCommmand(movieGateway: state.movieGateway, movieId: id)
             
         case .nowPlayingSelected:
-            newState.endpoint = MovieTarget.nowPlaying
+            newState.command = ListNowPlayingCommand(movieGateway: state.movieGateway)
             
         case .response(.success(let result)):
             newState.result = result

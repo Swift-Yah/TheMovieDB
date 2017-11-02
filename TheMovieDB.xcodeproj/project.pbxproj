@@ -49,6 +49,11 @@
 		04BF57401FA76A92000B1914 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04BF573E1FA76A92000B1914 /* LaunchScreen.storyboard */; };
 		04BF574B1FA76A92000B1914 /* TheMovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF574A1FA76A92000B1914 /* TheMovieDBTests.swift */; };
 		04BF57561FA76A92000B1914 /* TheMovieDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF57551FA76A92000B1914 /* TheMovieDBUITests.swift */; };
+		5359D5891FAAE272004A0C95 /* ListTopRatedMovieCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359D5881FAAE272004A0C95 /* ListTopRatedMovieCommand.swift */; };
+		5359D58B1FAAE36A004A0C95 /* ListUpcomingMovieCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359D58A1FAAE36A004A0C95 /* ListUpcomingMovieCommand.swift */; };
+		5359D58D1FAAE434004A0C95 /* ListDetailMovieCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359D58C1FAAE434004A0C95 /* ListDetailMovieCommand.swift */; };
+		5359D58F1FAAE4C3004A0C95 /* ListNowPlayingMovieCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359D58E1FAAE4C3004A0C95 /* ListNowPlayingMovieCommand.swift */; };
+		5359D5911FAAE524004A0C95 /* ListConfigurationCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5359D5901FAAE524004A0C95 /* ListConfigurationCommand.swift */; };
 		53763A141FA82FE10096B2C7 /* RxFeedback.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53763A131FA82FE10096B2C7 /* RxFeedback.framework */; };
 		53763A191FA834AD0096B2C7 /* HomeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53763A181FA834AD0096B2C7 /* HomeEvent.swift */; };
 		53763A1B1FA835590096B2C7 /* HomeState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53763A1A1FA835590096B2C7 /* HomeState.swift */; };
@@ -129,6 +134,11 @@
 		04BF57511FA76A92000B1914 /* TheMovieDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheMovieDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BF57551FA76A92000B1914 /* TheMovieDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheMovieDBUITests.swift; sourceTree = "<group>"; };
 		04BF57571FA76A92000B1914 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5359D5881FAAE272004A0C95 /* ListTopRatedMovieCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTopRatedMovieCommand.swift; sourceTree = "<group>"; };
+		5359D58A1FAAE36A004A0C95 /* ListUpcomingMovieCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUpcomingMovieCommand.swift; sourceTree = "<group>"; };
+		5359D58C1FAAE434004A0C95 /* ListDetailMovieCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailMovieCommand.swift; sourceTree = "<group>"; };
+		5359D58E1FAAE4C3004A0C95 /* ListNowPlayingMovieCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListNowPlayingMovieCommand.swift; sourceTree = "<group>"; };
+		5359D5901FAAE524004A0C95 /* ListConfigurationCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListConfigurationCommand.swift; sourceTree = "<group>"; };
 		53763A131FA82FE10096B2C7 /* RxFeedback.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxFeedback.framework; path = Carthage/Build/iOS/RxFeedback.framework; sourceTree = "<group>"; };
 		53763A181FA834AD0096B2C7 /* HomeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEvent.swift; sourceTree = "<group>"; };
 		53763A1A1FA835590096B2C7 /* HomeState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeState.swift; sourceTree = "<group>"; };
@@ -187,7 +197,12 @@
 		04359DB11FAA8B85007E1452 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
+				5359D5901FAAE524004A0C95 /* ListConfigurationCommand.swift */,
+				5359D58C1FAAE434004A0C95 /* ListDetailMovieCommand.swift */,
+				5359D58E1FAAE4C3004A0C95 /* ListNowPlayingMovieCommand.swift */,
 				04359DB21FAA8BA0007E1452 /* ListPopularMovieCommand.swift */,
+				5359D5881FAAE272004A0C95 /* ListTopRatedMovieCommand.swift */,
+				5359D58A1FAAE36A004A0C95 /* ListUpcomingMovieCommand.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -621,6 +636,7 @@
 			files = (
 				53763A191FA834AD0096B2C7 /* HomeEvent.swift in Sources */,
 				53763A2C1FA85B8B0096B2C7 /* MovieServiceableFactory.swift in Sources */,
+				5359D58B1FAAE36A004A0C95 /* ListUpcomingMovieCommand.swift in Sources */,
 				04359DB01FAA8A7C007E1452 /* PrimitiveSequence+Encodable.swift in Sources */,
 				04359DCB1FAA9D76007E1452 /* HomeStateFactory.swift in Sources */,
 				04359DBF1FAA94AE007E1452 /* ConfigurationMoyaGateway.swift in Sources */,
@@ -633,9 +649,12 @@
 				049F16F31FA7AE5B00A5D280 /* Page.swift in Sources */,
 				53763A2F1FA861890096B2C7 /* MovieServiceable.swift in Sources */,
 				049F17001FA7C57A00A5D280 /* BaseTarget.swift in Sources */,
+				5359D58D1FAAE434004A0C95 /* ListDetailMovieCommand.swift in Sources */,
+				5359D5891FAAE272004A0C95 /* ListTopRatedMovieCommand.swift in Sources */,
 				04BF57381FA76A92000B1914 /* HomeViewController.swift in Sources */,
 				5380173C1FA95DC90083EB66 /* MovieGateway.swift in Sources */,
 				049F16F81FA7B0ED00A5D280 /* MovieTarget.swift in Sources */,
+				5359D58F1FAAE4C3004A0C95 /* ListNowPlayingMovieCommand.swift in Sources */,
 				53763A231FA8429B0096B2C7 /* HomeFeedback.swift in Sources */,
 				049F16F11FA7ABB400A5D280 /* DateRange.swift in Sources */,
 				040194E21FA7DD5D00EDD1F0 /* TargetParameters.swift in Sources */,
@@ -656,6 +675,7 @@
 				049F16FA1FA7B16500A5D280 /* ConfigurationTarget.swift in Sources */,
 				53763A1B1FA835590096B2C7 /* HomeState.swift in Sources */,
 				04359DB91FAA93F7007E1452 /* MovieMoyaGateway.swift in Sources */,
+				5359D5911FAAE524004A0C95 /* ListConfigurationCommand.swift in Sources */,
 				049F16E71FA7A20E00A5D280 /* Genre.swift in Sources */,
 				04BF57361FA76A92000B1914 /* AppDelegate.swift in Sources */,
 				049F16E51FA799BF00A5D280 /* MovieDetail.swift in Sources */,
