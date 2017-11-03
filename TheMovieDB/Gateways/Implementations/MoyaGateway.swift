@@ -7,10 +7,8 @@
 //
 
 import class Moya.MoyaProvider
-import class RxSwift.MainScheduler
-import class RxSwift.Observable
-import struct RxSwift.Single
 import RxMoya
+import struct RxSwift.Single
 
 protocol MoyaGateway {
     func request<T, U: Decodable>(_ token: T, using: MoyaProvider<T>) -> Single<Result<U, MovieError>>
@@ -19,32 +17,16 @@ protocol MoyaGateway {
 
 extension MoyaGateway {
     func request<T, U: Decodable>(_ token: T, using provider: MoyaProvider<T>) -> Single<Result<U, MovieError>> {
-        let maxAttempts = 4
-
         return provider.rx.request(token)
             .retry(3)
             .map(U.self)
-            .retryWhen({ (errorTrigger: Observable<Error>) in
-                return errorTrigger.enumerated().flatMap({ (attempt: Int, error: Error) -> Observable<Int> in
-                    guard attempt < maxAttempts - 1 else { return Observable.error(error) }
-
-                    return Observable<Int>.interval(attempt + 1, scheduler: MainScheduler.instance).take(1)
-                })
-            })
+            .retryWhen(maxAttempts: 4)
     }
 
     func requestString<T>(_ token: T, using provider: MoyaProvider<T>) -> Single<Result<String, MovieError>> {
-        let maxAttempts = 4
-
         return provider.rx.request(token)
             .retry(3)
             .mapString()
-            .retryWhen({ errorTrigger in
-                return errorTrigger.enumerated().flatMap({ (attemp, error) -> Observable<Int> in
-                    guard attemp < maxAttempts - 1 else { return Observable.error(error) }
-
-                    return Observable<Int>.interval(attemp + 1, scheduler: MainScheduler.instance).take(1)
-                })
-            })
+            .retryWhen(maxAttempts: 4)
     }
 }
