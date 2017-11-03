@@ -7,7 +7,9 @@
 //
 
 import NSObject_Rx
+import RxCocoa
 import RxFeedback
+import RxSwift
 import UIKit
 
 final class HomeViewController: UIViewController {
@@ -25,6 +27,10 @@ final class HomeViewController: UIViewController {
         return HomeStateFactory.make()
     }()
     
+    lazy var messageGateway: MessageGateway = {
+        return MessageGatewayFactory.make()
+    }()
+    
     // MARK: UIViewController functions
     
     override func viewDidLoad() {
@@ -38,7 +44,8 @@ final class HomeViewController: UIViewController {
     private var binding: HomeFeedback.Feedback {
         return bind(self, { (controller, state) -> Bindings<HomeEvent> in
             let subscriptions = [
-                state.map({ $0.result }).drive(controller.textView.rx.text)
+                state.map({ $0.result }).drive(controller.textView.rx.text),
+                state.map({ $0.error?.description }).drive(controller.rx.error)
             ]
 
             let events = [
@@ -58,5 +65,19 @@ final class HomeViewController: UIViewController {
     
     private func setupFeedback() {
         HomeFeedback.system(initialState: viewState, ui: binding).drive().disposed(by: rx.disposeBag)
+    }
+}
+
+// MARK: Reactive extension
+
+fileprivate extension Reactive where Base == HomeViewController {
+    var error: Binder<String?> {
+        return Binder(base) { controller, value in
+            guard let value = value else {
+                return controller.messageGateway.hide()
+            }
+            
+            controller.messageGateway.error(message: value)
+        }
     }
 }

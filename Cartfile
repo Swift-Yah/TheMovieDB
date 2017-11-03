@@ -3,4 +3,5 @@ github "kzaher/RxFeedback"
 github "Moya/Moya"
 github "ReactiveX/RxSwift"
 github "RxSwiftCommunity/NSObject-Rx"
+github "SwiftKickMobile/SwiftMessages"
 

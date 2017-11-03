@@ -8,7 +8,7 @@
 
 struct HomeState {
     var command: HomeCommand?
-    var error: Error?
+    var error: MovieError?
     var result: String
     
     private let movieGateway: MovieGateway
@@ -16,7 +16,7 @@ struct HomeState {
     
     // MARK: Initializers
     
-    init(command: HomeCommand? = nil, error: Error? = nil, result: String = "", movieGateway: MovieGateway,
+    init(command: HomeCommand? = nil, error: MovieError? = nil, result: String = "", movieGateway: MovieGateway,
          configurationGateway: ConfigurationGateway) {
         self.command = command
         self.error = error

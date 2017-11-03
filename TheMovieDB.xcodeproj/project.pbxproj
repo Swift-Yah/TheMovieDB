@@ -64,6 +64,10 @@
 		53763A231FA8429B0096B2C7 /* HomeFeedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53763A221FA8429B0096B2C7 /* HomeFeedback.swift */; };
 		53763A291FA855E50096B2C7 /* ControlEvent+Signal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53763A281FA855E50096B2C7 /* ControlEvent+Signal.swift */; };
 		5380173C1FA95DC90083EB66 /* MovieGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5380173B1FA95DC90083EB66 /* MovieGateway.swift */; };
+		538A46951FAC178900AF1BD5 /* MessageGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A46941FAC178900AF1BD5 /* MessageGateway.swift */; };
+		538A46971FAC193700AF1BD5 /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538A46961FAC193700AF1BD5 /* SwiftMessages.framework */; };
+		538A469A1FAC19F900AF1BD5 /* SwiftMessagesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A46991FAC19F900AF1BD5 /* SwiftMessagesGateway.swift */; };
+		538A469E1FAC234500AF1BD5 /* MessageGatewayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A469D1FAC234500AF1BD5 /* MessageGatewayFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +152,10 @@
 		53763A221FA8429B0096B2C7 /* HomeFeedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedback.swift; sourceTree = "<group>"; };
 		53763A281FA855E50096B2C7 /* ControlEvent+Signal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ControlEvent+Signal.swift"; sourceTree = "<group>"; };
 		5380173B1FA95DC90083EB66 /* MovieGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGateway.swift; sourceTree = "<group>"; };
+		538A46941FAC178900AF1BD5 /* MessageGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageGateway.swift; sourceTree = "<group>"; };
+		538A46961FAC193700AF1BD5 /* SwiftMessages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMessages.framework; path = Carthage/Build/iOS/SwiftMessages.framework; sourceTree = "<group>"; };
+		538A46991FAC19F900AF1BD5 /* SwiftMessagesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMessagesGateway.swift; sourceTree = "<group>"; };
+		538A469D1FAC234500AF1BD5 /* MessageGatewayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageGatewayFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				538A46971FAC193700AF1BD5 /* SwiftMessages.framework in Frameworks */,
 				0475506F1FA782C700FAE551 /* RxCocoa.framework in Frameworks */,
 				53763A141FA82FE10096B2C7 /* RxFeedback.framework in Frameworks */,
 				047550771FA78AAB00FAE551 /* NSObject_Rx.framework in Frameworks */,
@@ -234,6 +243,7 @@
 		047550661FA782C600FAE551 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				538A46961FAC193700AF1BD5 /* SwiftMessages.framework */,
 				53763A131FA82FE10096B2C7 /* RxFeedback.framework */,
 				049F17011FA7CAFE00A5D280 /* RxCache.framework */,
 				047550761FA78AAB00FAE551 /* NSObject_Rx.framework */,
@@ -442,6 +452,7 @@
 			children = (
 				53763A1C1FA838250096B2C7 /* Errors */,
 				53763A271FA855CB0096B2C7 /* Extensions */,
+				538A469B1FAC231800AF1BD5 /* Factories */,
 				5377720B1FAC10DB00BE1AA7 /* Gateways */,
 				049F16DF1FA7956500A5D280 /* Models */,
 				049F16F61FA7B03700A5D280 /* Networking */,
@@ -454,7 +465,9 @@
 		5377720B1FAC10DB00BE1AA7 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
+				538A46981FAC198900AF1BD5 /* Implementations */,
 				04359DBC1FAA946A007E1452 /* MoyaGateway.swift */,
+				538A46941FAC178900AF1BD5 /* MessageGateway.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -465,6 +478,30 @@
 				04359DBA1FAA9456007E1452 /* ConfigurationGateway.swift */,
 				5380173B1FA95DC90083EB66 /* MovieGateway.swift */,
 				04359DB71FAA93C5007E1452 /* Implementations */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		538A46981FAC198900AF1BD5 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				538A46991FAC19F900AF1BD5 /* SwiftMessagesGateway.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		538A469B1FAC231800AF1BD5 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				538A469C1FAC232100AF1BD5 /* Gateways */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		538A469C1FAC232100AF1BD5 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				538A469D1FAC234500AF1BD5 /* MessageGatewayFactory.swift */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -615,6 +652,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCache.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxFeedback.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftMessages.framework",
 			);
 			name = Carthage;
 			outputPaths = (
@@ -627,6 +665,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/NSObject_Rx.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxCache.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RxFeedback.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftMessages.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -642,6 +681,7 @@
 				53763A191FA834AD0096B2C7 /* HomeEvent.swift in Sources */,
 				5359D58B1FAAE36A004A0C95 /* ListUpcomingMovieCommand.swift in Sources */,
 				04359DB01FAA8A7C007E1452 /* PrimitiveSequence+Result.swift in Sources */,
+				538A469E1FAC234500AF1BD5 /* MessageGatewayFactory.swift in Sources */,
 				04359DCB1FAA9D76007E1452 /* HomeStateFactory.swift in Sources */,
 				04359DBF1FAA94AE007E1452 /* ConfigurationMoyaGateway.swift in Sources */,
 				049F16E11FA7961B00A5D280 /* ImageConfiguration.swift in Sources */,
@@ -657,6 +697,7 @@
 				5359D5891FAAE272004A0C95 /* ListTopRatedMovieCommand.swift in Sources */,
 				04BF57381FA76A92000B1914 /* HomeViewController.swift in Sources */,
 				5380173C1FA95DC90083EB66 /* MovieGateway.swift in Sources */,
+				538A46951FAC178900AF1BD5 /* MessageGateway.swift in Sources */,
 				049F16F81FA7B0ED00A5D280 /* MovieTarget.swift in Sources */,
 				5359D58F1FAAE4C3004A0C95 /* ListNowPlayingMovieCommand.swift in Sources */,
 				53763A231FA8429B0096B2C7 /* HomeFeedback.swift in Sources */,
@@ -671,6 +712,7 @@
 				049F16EF1FA7A8B400A5D280 /* Movie.swift in Sources */,
 				049F17041FA7D0B700A5D280 /* Functions.swift in Sources */,
 				04359DC11FAA952E007E1452 /* ConfigurationGatewayFactory.swift in Sources */,
+				538A469A1FAC19F900AF1BD5 /* SwiftMessagesGateway.swift in Sources */,
 				049F16E31FA7988A00A5D280 /* Configuration.swift in Sources */,
 				04359DBD1FAA946A007E1452 /* MoyaGateway.swift in Sources */,
 				5359D5951FAB9753004A0C95 /* Typealiases.swift in Sources */,
