@@ -6,12 +6,9 @@
 //  Copyright © 2017 Swift Yah. All rights reserved.
 //
 
-import struct Foundation.URL
-import struct RxSwift.Single
-import struct RxCocoa.Signal
 import struct RxCocoa.Driver
+import struct RxCocoa.Signal
 import RxFeedback
-import Moya
 
 struct HomeFeedback {
     typealias Feedback = (Driver<HomeState>) -> Signal<HomeEvent>

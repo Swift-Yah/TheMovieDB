@@ -7,11 +7,11 @@
 //
 
 import class Foundation.JSONDecoder
+import enum Moya.MoyaError
+import class Moya.Response
 import struct RxSwift.PrimitiveSequence
 import struct RxSwift.Single
 import enum RxSwift.SingleTrait
-import class Moya.Response
-import enum Moya.MoyaError
 
 extension PrimitiveSequence where Element == Response, Trait == SingleTrait {
     func map<D: Decodable>(_ type: D.Type, atKeyPath keyPath: String? = nil, using decoder: JSONDecoder = JSONDecoder()) -> Single<Result<D, MovieError>> {

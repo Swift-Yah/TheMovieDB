@@ -7,8 +7,8 @@
 //
 
 import struct RxSwift.PrimitiveSequence
-import class RxSwift.Observable
 import class RxSwift.MainScheduler
+import class RxSwift.Observable
 
 extension PrimitiveSequence {
     func retryWhen(maxAttempts: Int) -> PrimitiveSequence<Trait, Element> {

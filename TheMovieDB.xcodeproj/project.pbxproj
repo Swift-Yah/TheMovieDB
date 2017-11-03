@@ -219,7 +219,6 @@
 			children = (
 				04359DBE1FAA94AE007E1452 /* ConfigurationMoyaGateway.swift */,
 				04359DB81FAA93F7007E1452 /* MovieMoyaGateway.swift */,
-				04359DBC1FAA946A007E1452 /* MoyaGateway.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -312,21 +311,9 @@
 		04BF57341FA76A92000B1914 /* TheMovieDB */ = {
 			isa = PBXGroup;
 			children = (
-				04359DAA1FAA8487007E1452 /* Commands */,
-				5380173A1FA95D400083EB66 /* Gateways */,
-				04BF57631FA76DE3000B1914 /* Commons */,
-				04BF57641FA76DE9000B1914 /* Controllers */,
-				53763A1C1FA838250096B2C7 /* Errors */,
-				53763A171FA834530096B2C7 /* Events */,
-				53763A271FA855CB0096B2C7 /* Extensions */,
-				53763A2A1FA85B4C0096B2C7 /* Factories */,
-				53763A211FA842900096B2C7 /* Feedbacks */,
-				049F16DF1FA7956500A5D280 /* Models */,
-				049F16F61FA7B03700A5D280 /* Networking */,
-				04BF57651FA76E09000B1914 /* Resources */,
-				53763A161FA8344D0096B2C7 /* States */,
-				04BF57661FA76E48000B1914 /* Storyboards */,
-				049F16FB1FA7B26E00A5D280 /* Utilities */,
+				5377720A1FAC02FD00BE1AA7 /* Commons */,
+				04BF57631FA76DE3000B1914 /* Essentials */,
+				537772081FAC022600BE1AA7 /* Features */,
 			);
 			path = TheMovieDB;
 			sourceTree = "<group>";
@@ -349,12 +336,15 @@
 			path = TheMovieDBUITests;
 			sourceTree = "<group>";
 		};
-		04BF57631FA76DE3000B1914 /* Commons */ = {
+		04BF57631FA76DE3000B1914 /* Essentials */ = {
 			isa = PBXGroup;
 			children = (
 				04BF57351FA76A92000B1914 /* AppDelegate.swift */,
+				04BF573C1FA76A92000B1914 /* Assets.xcassets */,
+				04BF57411FA76A92000B1914 /* Info.plist */,
+				04BF573E1FA76A92000B1914 /* LaunchScreen.storyboard */,
 			);
-			path = Commons;
+			path = Essentials;
 			sourceTree = "<group>";
 		};
 		04BF57641FA76DE9000B1914 /* Controllers */ = {
@@ -365,19 +355,9 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		04BF57651FA76E09000B1914 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				04BF573C1FA76A92000B1914 /* Assets.xcassets */,
-				04BF57411FA76A92000B1914 /* Info.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		04BF57661FA76E48000B1914 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				04BF573E1FA76A92000B1914 /* LaunchScreen.storyboard */,
 				04BF57391FA76A92000B1914 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -419,8 +399,8 @@
 			isa = PBXGroup;
 			children = (
 				53763A281FA855E50096B2C7 /* ControlEvent+Signal.swift */,
-				04359DAF1FAA8A7C007E1452 /* PrimitiveSequence+Result.swift */,
 				5359D5921FAB7869004A0C95 /* ObservableType+Int.swift */,
+				04359DAF1FAA8A7C007E1452 /* PrimitiveSequence+Result.swift */,
 				530C47A61FABF549006A1C78 /* PrimitiveSequence+RetryWhen.swift */,
 			);
 			path = Extensions;
@@ -435,12 +415,56 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		537772081FAC022600BE1AA7 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				537772091FAC025900BE1AA7 /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		537772091FAC025900BE1AA7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				04359DAA1FAA8487007E1452 /* Commands */,
+				04BF57641FA76DE9000B1914 /* Controllers */,
+				53763A171FA834530096B2C7 /* Events */,
+				53763A2A1FA85B4C0096B2C7 /* Factories */,
+				53763A211FA842900096B2C7 /* Feedbacks */,
+				5380173A1FA95D400083EB66 /* Gateways */,
+				53763A161FA8344D0096B2C7 /* States */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5377720A1FAC02FD00BE1AA7 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				53763A1C1FA838250096B2C7 /* Errors */,
+				53763A271FA855CB0096B2C7 /* Extensions */,
+				5377720B1FAC10DB00BE1AA7 /* Gateways */,
+				049F16DF1FA7956500A5D280 /* Models */,
+				049F16F61FA7B03700A5D280 /* Networking */,
+				04BF57661FA76E48000B1914 /* Storyboards */,
+				049F16FB1FA7B26E00A5D280 /* Utilities */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		5377720B1FAC10DB00BE1AA7 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				04359DBC1FAA946A007E1452 /* MoyaGateway.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
 		5380173A1FA95D400083EB66 /* Gateways */ = {
 			isa = PBXGroup;
 			children = (
-				04359DB71FAA93C5007E1452 /* Implementations */,
-				5380173B1FA95DC90083EB66 /* MovieGateway.swift */,
 				04359DBA1FAA9456007E1452 /* ConfigurationGateway.swift */,
+				5380173B1FA95DC90083EB66 /* MovieGateway.swift */,
+				04359DB71FAA93C5007E1452 /* Implementations */,
 			);
 			path = Gateways;
 			sourceTree = "<group>";
@@ -833,7 +857,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = TheMovieDB/Resources/Info.plist;
+				INFOPLIST_FILE = TheMovieDB/Essentials/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.TheMovieDB";
@@ -855,7 +879,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = TheMovieDB/Resources/Info.plist;
+				INFOPLIST_FILE = TheMovieDB/Essentials/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swift-yah.TheMovieDB";
