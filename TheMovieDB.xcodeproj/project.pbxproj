@@ -68,6 +68,8 @@
 		538A46971FAC193700AF1BD5 /* SwiftMessages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 538A46961FAC193700AF1BD5 /* SwiftMessages.framework */; };
 		538A469A1FAC19F900AF1BD5 /* SwiftMessagesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A46991FAC19F900AF1BD5 /* SwiftMessagesGateway.swift */; };
 		538A469E1FAC234500AF1BD5 /* MessageGatewayFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A469D1FAC234500AF1BD5 /* MessageGatewayFactory.swift */; };
+		538A46A11FACD4B200AF1BD5 /* Messageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A46A01FACD4B200AF1BD5 /* Messageable.swift */; };
+		538A46A31FACD4E900AF1BD5 /* Reactive+Messageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 538A46A21FACD4E900AF1BD5 /* Reactive+Messageable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,8 @@
 		538A46961FAC193700AF1BD5 /* SwiftMessages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftMessages.framework; path = Carthage/Build/iOS/SwiftMessages.framework; sourceTree = "<group>"; };
 		538A46991FAC19F900AF1BD5 /* SwiftMessagesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftMessagesGateway.swift; sourceTree = "<group>"; };
 		538A469D1FAC234500AF1BD5 /* MessageGatewayFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageGatewayFactory.swift; sourceTree = "<group>"; };
+		538A46A01FACD4B200AF1BD5 /* Messageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messageable.swift; sourceTree = "<group>"; };
+		538A46A21FACD4E900AF1BD5 /* Reactive+Messageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reactive+Messageable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -412,6 +416,7 @@
 				5359D5921FAB7869004A0C95 /* ObservableType+Int.swift */,
 				04359DAF1FAA8A7C007E1452 /* PrimitiveSequence+Result.swift */,
 				530C47A61FABF549006A1C78 /* PrimitiveSequence+RetryWhen.swift */,
+				538A46A21FACD4E900AF1BD5 /* Reactive+Messageable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -456,6 +461,7 @@
 				5377720B1FAC10DB00BE1AA7 /* Gateways */,
 				049F16DF1FA7956500A5D280 /* Models */,
 				049F16F61FA7B03700A5D280 /* Networking */,
+				538A469F1FACD44700AF1BD5 /* Protocols */,
 				04BF57661FA76E48000B1914 /* Storyboards */,
 				049F16FB1FA7B26E00A5D280 /* Utilities */,
 			);
@@ -504,6 +510,14 @@
 				538A469D1FAC234500AF1BD5 /* MessageGatewayFactory.swift */,
 			);
 			path = Gateways;
+			sourceTree = "<group>";
+		};
+		538A469F1FACD44700AF1BD5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				538A46A01FACD4B200AF1BD5 /* Messageable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -715,6 +729,7 @@
 				538A469A1FAC19F900AF1BD5 /* SwiftMessagesGateway.swift in Sources */,
 				049F16E31FA7988A00A5D280 /* Configuration.swift in Sources */,
 				04359DBD1FAA946A007E1452 /* MoyaGateway.swift in Sources */,
+				538A46A11FACD4B200AF1BD5 /* Messageable.swift in Sources */,
 				5359D5951FAB9753004A0C95 /* Typealiases.swift in Sources */,
 				04359DAC1FAA8488007E1452 /* HomeCommand.swift in Sources */,
 				049F16EB1FA7A5E800A5D280 /* Country.swift in Sources */,
@@ -725,6 +740,7 @@
 				049F16E71FA7A20E00A5D280 /* Genre.swift in Sources */,
 				04BF57361FA76A92000B1914 /* AppDelegate.swift in Sources */,
 				049F16E51FA799BF00A5D280 /* MovieDetail.swift in Sources */,
+				538A46A31FACD4E900AF1BD5 /* Reactive+Messageable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

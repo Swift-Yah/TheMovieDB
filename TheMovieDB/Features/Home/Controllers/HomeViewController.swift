@@ -7,12 +7,11 @@
 //
 
 import NSObject_Rx
-import RxCocoa
-import RxFeedback
-import RxSwift
+import func RxFeedback.bind
+import class RxFeedback.Bindings
 import UIKit
 
-final class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController, Messageable {
     @IBOutlet private weak var textView: UITextView!
     @IBOutlet private weak var popularButton: UIButton!
     @IBOutlet private weak var topRatedButton: UIButton!
@@ -23,9 +22,15 @@ final class HomeViewController: UIViewController {
     
     // MARK: Dependency Injection
     
-    lazy var viewState: HomeState = {
-        return HomeStateFactory.make()
+    lazy var movieGateway: MovieGateway = {
+        return MovieGatewayFactory.make()
     }()
+    
+    lazy var configurationGateway: ConfigurationGateway = {
+        return ConfigurationFactoryGateway.make()
+    }()
+    
+    // MARK: Messageable conforms
     
     lazy var messageGateway: MessageGateway = {
         return MessageGatewayFactory.make()
@@ -42,7 +47,7 @@ final class HomeViewController: UIViewController {
     // MARK: Private Computed variables
 
     private var binding: HomeFeedback.Feedback {
-        return bind(self, { (controller, state) -> Bindings<HomeEvent> in
+        return bind(self, { (controller, state) in
             let subscriptions = [
                 state.map({ $0.result }).drive(controller.textView.rx.text),
                 state.map({ $0.error?.description }).drive(controller.rx.error)
@@ -61,23 +66,13 @@ final class HomeViewController: UIViewController {
         })
     }
     
+    private var viewState: HomeState {
+        return HomeStateFactory.make(movieGateway: movieGateway, configurationGateway: configurationGateway)
+    }
+    
     // MARK: Private functions
     
     private func setupFeedback() {
         HomeFeedback.system(initialState: viewState, ui: binding).drive().disposed(by: rx.disposeBag)
-    }
-}
-
-// MARK: Reactive extension
-
-fileprivate extension Reactive where Base == HomeViewController {
-    var error: Binder<String?> {
-        return Binder(base) { controller, value in
-            guard let value = value else {
-                return controller.messageGateway.hide()
-            }
-            
-            controller.messageGateway.error(message: value)
-        }
     }
 }

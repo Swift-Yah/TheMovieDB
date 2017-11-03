@@ -9,10 +9,7 @@
 struct HomeStateFactory {
     private init() { }
     
-    static func make() -> HomeState {
-        let movieGateway = MovieGatewayFactory.make()
-        let configurationGateway = ConfigurationFactoryGateway.make()
-
+    static func make(movieGateway: MovieGateway, configurationGateway: ConfigurationGateway) -> HomeState {
         return HomeState(movieGateway: movieGateway, configurationGateway: configurationGateway)
     }
 }
